@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>META4</title>
+	<script type="text/javascript" src="js/engine/gameengine.js"></script>
+	<script type="text/javascript" src="js/engine/assetmanager.js"></script>
+	<script type="text/javascript" src="js/engine/animation.js"></script>
+	<script type="text/javascript" src="js/engine/playerinfo.js"></script>
+    <script type="text/javascript" src="js/engine/enemyInfo.js"></script>
+	<script type="text/javascript" src="js/stage/map.js"></script>
+	<script type="text/javascript" src="js/stage/minimap.js"></script>
+	<script type="text/javascript" src="js/stage/camera.js"></script>
+	<script type="text/javascript" src="js/stage/placeEnemies.js"></script>
+	<script type="text/javascript" src="js/stage/placeTerrain.js"></script>
+	<script type="text/javascript" src="js/players/player.js"></script>
+	<script type="text/javascript" src="js/players/enemies/enemy.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/boss.js"></script>
+	<script type="text/javascript" src="js/players/hero.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/dr-darkabolical.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/armored-goblin.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/black-knight.js"></script>
+	<script type="text/javascript" src="js/players/enemies/basic/black-rat.js"></script>
+	<script type="text/javascript" src="js/players/enemies/undead/blonde-zombie.js"></script>
+	<script type="text/javascript" src="js/players/enemies/basic/brown-rat.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/death.js"></script>
+	<script type="text/javascript" src="js/players/enemies/basic/dog.js"></script>
+	<script type="text/javascript" src="js/players/enemies/human/eyepatch.js"></script>
+	<script type="text/javascript" src="js/players/enemies/goblin/helmet-goblin.js"></script>
+	<script type="text/javascript" src="js/players/enemies/dark/hood.js"></script>
+	<script type="text/javascript" src="js/players/enemies/tomb/mummy.js"></script>
+	<script type="text/javascript" src="js/players/enemies/dark/scarf.js"></script>
+	<script type="text/javascript" src="js/players/enemies/tomb/skeleton.js"></script>
+	<script type="text/javascript" src="js/players/enemies/bosses/skeleton-king.js"></script>
+	<script type="text/javascript" src="js/players/enemies/human/stitches.js"></script>
+	<script type="text/javascript" src="js/players/enemies/undead/suburban-zombie.js"></script>
+	<script type="text/javascript" src="js/players/enemies/undead/suit-zombie.js"></script>
+	<script type="text/javascript" src="js/players/enemies/human/viking.js"></script>
+	<script type="text/javascript" src="js/players/enemies/goblin/wizard-goblin.js"></script>
+	<script type="text/javascript" src="js/items/item.js"></script>
+	<script type="text/javascript" src="js/items/weapons/weapon.js"></script>
+	<script type="text/javascript" src="js/items/weapons/swords/sword.js"></script>
+	<script type="text/javascript" src="js/items/weapons/swords/sword1.js"></script>
+	<script type="text/javascript" src="js/items/weapons/swords/sword2.js"></script>
+	<script type="text/javascript" src="js/items/weapons/swords/sword3.js"></script>
+	<script type="text/javascript" src="js/items/weapons/bows/bow.js"></script>
+	<script type="text/javascript" src="js/items/weapons/bows/bow1.js"></script>
+	<script type="text/javascript" src="js/items/weapons/bows/bow2.js"></script>
+	<script type="text/javascript" src="js/items/weapons/bows/bow3.js"></script>
+	<script type="text/javascript" src="js/items/weapons/bows/arrow.js"></script>
+    <script type="text/javascript" src="js/items/weapons/enemyWeapons/blueOrb.js"></script>
+        <script type="text/javascript" src="js/items/weapons/enemyWeapons/bone.js"></script>
+        <script type="text/javascript" src="js/items/weapons/enemyWeapons/purpleOrb.js"></script>
+        <script type="text/javascript" src="js/items/weapons/enemyWeapons/ninjaStar.js"></script>
+	<script type="text/javascript" src="js/items/key.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/terrain.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/gate.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/tree.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/snowtree.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/tombstone.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/rock.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/flatterrain.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/pit.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/falsefloors/falsefloor.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/falsefloors/falsefloor-zombies.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/falsefloors/falsefloor-snow.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/falsefloors/falsefloor-tomb.js"></script>
+	<script type="text/javascript" src="js/stage/terrain/falsefloors/falsefloor-human.js"></script>
+	<script type="text/javascript" src="js/items/heart.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>META4</h1>
+<div id="titleScreen">
+	<input id="startButton" type="button" value="Start" onclick="startGame()">
+</div>
+
+<div id="game">
+  <canvas id="gameWorld" tabindex="1" width="600" height="600"></canvas>
+  <input id="resetButton" type="button" value="Restart" onclick="restartGame()">
+</div>
+<h2>Objective:</h2>
+<p>In order to open the gate, obtain a key from each boss, who are located at the corners of the maps.</p>
+<p>Then go through the gate to fight the final boss. He will spawn his minions for each of the 3 rounds of the fight and you must kill them all.</p>
+<h2>Controls:</h2>
+<ul>
+	<li>Use WASD to move</li>
+	<li>Use the arrow keys to attack in the direction you choose</li>
+	<li>Press space to switch between melee weapon and bow</li>
+</ul>
+
+<script type="text/javascript">
+	function startGame() {
+		document.getElementById('titleScreen').style.display = "none";
+		document.getElementById('game').style.display = "inline";
+		document.getElementById('gameWorld').style.display = "inline";
+		document.getElementById('resetButton').style.display = "none";
+		document.getElementById('gameWorld').focus();
+	}
+	function restartGame() {
+		document.getElementById('resetButton').style.display = "none";
+		newGame();
+		document.getElementById('gameWorld').focus();
+	}
+</script>
+</body>
+</html>

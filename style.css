@@ -1,0 +1,70 @@
+/* 
+        Created on : Feb 23, 2016, 11:07:11 AM
+        Author     : Hannah
+*/
+
+#titleScreen {
+  width: 600px;
+  height: 600px;
+  background-color: black;
+  background-image: url("img/startscreen.png");
+}
+
+#startButton {
+  height: 40px;
+  width: 100px;
+  margin: -40px -50px;
+  position: relative;
+  top: 62%;
+  left: 50%;
+  font-size: 30px;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: black;
+  color: white;
+  background: rgba(0, 200, 255, 0.7);
+}
+
+#startButton:hover {
+  background: rgba(0, 0, 0, .5);
+}
+
+#game {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  display: none;
+}
+
+#gameWorld {
+  background: black;
+  display: none;
+}
+
+#resetButton {
+  display: none;
+  height: 40px;
+  width: 140px;
+  /*margin: -40px -50px;*/
+  /*position: relative;*/
+  /*top: 40%;*/
+  /*top: 62%;*/
+  /*left: -16%;*/
+  bottom: 10%;
+  left: 40%;
+  margin-bottom: 30px;
+  position: absolute;
+  font-size: 30px;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: black;
+  color: white;
+  background: rgba(255, 0, 0, 0.7);
+}
+
+#resetButton:hover {
+  /*background: rgba(255, 255, 255, .5);*/
+  background: white;
+  color: red;
+}
+

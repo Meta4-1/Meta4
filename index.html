@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>META4</title>
+	<script type="text/javascript" src="js/game.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>META4</h1>
+<div id="titleScreen">
+	<input id="startButton" type="button" value="Start" onclick="startGame()">
+</div>
+
+<div id="game" style="float:left;">
+  <canvas id="gameWorld" tabindex="1" width="600" height="600"></canvas>
+  <input id="resetButton" type="button" value="Restart" onclick="restartGame()">
+</div>
+<div id="instructions" style="position:absolute; right:0px; top:30px;">
+<h2>Objective:</h2>
+<p>In order to open the gate, obtain a key from each boss, who are located at the corners of the maps.</p>
+<p>Then go through the gate to fight the final boss. He will spawn his minions for each of the 3 rounds of the fight and you must kill them all.</p>
+<h2>Controls:</h2>
+<ul>
+	<li>Use WASD to move</li>
+	<li>Use the arrow keys to attack in the direction you choose</li>
+	<li>Press space to switch between melee weapon and bow</li>
+</ul>
+</div>
+<script type="text/javascript">
+	function startGame() {
+		document.getElementById('titleScreen').style.display = "none";
+		document.getElementById('game').style.display = "inline";
+		document.getElementById('gameWorld').style.display = "inline";
+		document.getElementById('resetButton').style.display = "none";
+		document.getElementById('instructions').style.display = "right";
+		document.getElementById('gameWorld').focus();
+	}
+	function restartGame() {
+		document.getElementById('resetButton').style.display = "none";
+		newGame();
+		document.getElementById('gameWorld').focus();
+	}
+</script>
+</body>
+</html>
